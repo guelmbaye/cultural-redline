@@ -12,6 +12,7 @@ export default function HomePage() {
   const [text, setText] = useState(AIRBNB_DEMO);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [demoLoaded, setDemoLoaded] = useState(false);
 
   async function analyze() {
     setLoading(true);
@@ -34,6 +35,12 @@ export default function HomePage() {
     }
   }
 
+  function loadValidatedDemo() {
+    setText(AIRBNB_DEMO);
+    setError(null);
+    setDemoLoaded(true);
+  }
+
   return (
     <main className="shell">
       <section className="hero">
@@ -53,16 +60,22 @@ export default function HomePage() {
         <textarea
           aria-label="Strategy brief"
           value={text}
-          onChange={(event) => setText(event.target.value)}
+          onChange={(event) => {
+            setText(event.target.value);
+            setDemoLoaded(false);
+          }}
           placeholder="Paste a marketing, sponsorship, or partnership brief…"
         />
         <div className="actions">
           <button className="btn btnPrimary" onClick={analyze} disabled={loading || text.trim().length < 20}>
             {loading ? "Analyzing…" : "Analyze cultural claims"}
           </button>
-          <button className="btn btnSecondary" onClick={() => setText(AIRBNB_DEMO)} disabled={loading}>Load validated demo</button>
+          <button className="btn btnSecondary" onClick={loadValidatedDemo} disabled={loading}>
+            {demoLoaded ? "Demo loaded ✓" : "Load validated demo"}
+          </button>
           <span className="mini">LLM interprets language. Qloo supplies evidence. Code decides.</span>
         </div>
+        {demoLoaded ? <div className="mini" style={{ marginTop: 10 }}>Validated Airbnb brief loaded locally — no network call is required.</div> : null}
         {error ? <div className="error">{error}</div> : null}
       </section>
     </main>
