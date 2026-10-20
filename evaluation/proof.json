@@ -1,0 +1,30 @@
+{
+  "culturalEvidenceV1": {
+    "corpusSha256": "1fbd3a3bd5595f2632b18cf0f5c01efe1ee7d9205afabbd09de4d46dd83ffe06",
+    "testableClaims": 40,
+    "evidenceBacked": 40,
+    "contradicted": 18,
+    "strongReversals": 2,
+    "qlooOffAblation": "PASS"
+  },
+  "blindCulturalEvidenceV2": {
+    "corpusSha256": "5d5113c9f1f21a2073a380cc25bf9e4172bc0f0bb56d73f9507bff62620a262f",
+    "testableClaims": 40,
+    "evidenceBacked": 38,
+    "contradicted": 23,
+    "strongReversals": 6,
+    "qlooOffAblation": "PASS"
+  },
+  "blindClaimCompilerV3": {
+    "corpusSha256": "f31f3557e5ff29db67e4585ef3e535f0f8600ad7eeb853ddf2f74df867a76591",
+    "documents": 10,
+    "goldClaims": 43,
+    "model": "gpt-4o-mini",
+    "quoteRecall": 1.0,
+    "kindAccuracy": 1.0,
+    "testableStructureAccuracy": 1.0,
+    "hallucinatedTestable": 0,
+    "unsafeAmbiguousCompilation": 0,
+    "verdict": "PASS"
+  }
+}
