@@ -30,6 +30,39 @@ That produces two maximum ordinal reversals in the same document:
 
 CULTURAL REDLINE marks those claims directly in the brief as **CONTRADICTED — MAJOR REVERSAL**.
 
+## Judge Quick Start — Try the Winning Moment in under 30 seconds
+
+**Live app:** https://cultural-redline.vercel.app/  
+**Public repo:** https://github.com/guelmbaye/cultural-redline
+
+1. Click **Load validated demo**.
+2. Click **Analyze cultural claims**.
+3. Review the compiled claim types:  
+   **STRONGEST → PAIRWISE → PAIRWISE → WEAKEST → NOT TESTABLE**
+4. Click **Verify with Qloo**.
+5. Open the first **CONTRADICTED** claim.
+6. Observe the **MAJOR REVERSAL — claimed #1 → Qloo #3**:
+   - Brief expected: **Harry Styles #1**
+   - Qloo evidence: **Harry Styles #3**
+7. Scroll to the **Winning Moment** and observe the full ranking flip:
+   - Brief expected: **Harry Styles #1 / Lana Del Rey #2 / Sam Smith #3**
+   - Qloo evidence: **Sam Smith #1 / Lana Del Rey #2 / Harry Styles #3**
+8. Toggle **Qloo OFF ablation**.
+9. Confirm that cultural verdicts become **VERIFICATION UNAVAILABLE** and no generic LLM fallback is used.
+
+> **The brief didn't change. Its credibility did.**
+
+### What this proves
+
+- The LLM interprets the language.
+- Qloo supplies the cultural evidence.
+- Deterministic code decides the verdict.
+- Removing Qloo removes cultural verification.
+
+For the validation evidence behind the demo:
+
+**https://cultural-redline.vercel.app/proof**
+
 > **The brief didn’t change. Its credibility did.**
 
 ## Why Qloo is essential
